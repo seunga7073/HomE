@@ -6,15 +6,15 @@
 <title>서승아 | Portfolio</title>
 <style>
   :root {
-    --bg: #0f172a;
-    --bg-soft: #1e293b;
-    --card: #1e293b;
-    --text: #f1f5f9;
-    --text-muted: #94a3b8;
-    --accent: #818cf8;
-    --accent-2: #f472b6;
-    --border: #334155;
-    --radius: 16px;
+    --mint: #d5f2e3;
+    --mint-2: #c3ecd6;
+    --lime: #dff0c7;
+    --text: #2f3b34;
+    --text-muted: #5f6f65;
+    --card: #ffffff;
+    --border: #e3ede5;
+    --accent: #7bb894;
+    --radius: 18px;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -24,67 +24,52 @@
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Pretendard",
       "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
-    background: var(--bg);
+    background: linear-gradient(180deg, #f3fbf6 0%, var(--mint) 50%, var(--lime) 100%);
     color: var(--text);
     line-height: 1.6;
   }
 
   .container {
-    max-width: 960px;
+    max-width: 880px;
     margin: 0 auto;
     padding: 0 24px;
   }
 
   /* Hero */
   .hero {
-    min-height: 70vh;
+    position: relative;
+    min-height: 78vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     text-align: center;
-    padding: 80px 24px 60px;
-    background:
-      radial-gradient(circle at 20% 20%, rgba(129, 140, 248, 0.25), transparent 45%),
-      radial-gradient(circle at 80% 30%, rgba(244, 114, 182, 0.2), transparent 45%),
-      var(--bg);
-  }
-
-  .avatar {
-    width: 108px;
-    height: 108px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: #fff;
-    background: linear-gradient(135deg, var(--accent), var(--accent-2));
-    box-shadow: 0 10px 30px rgba(129, 140, 248, 0.35);
-    margin-bottom: 24px;
+    padding: 60px 24px 72px;
+    background-image:
+      linear-gradient(180deg, rgba(213, 242, 227, 0.25) 0%, rgba(195, 236, 214, 0.55) 55%, rgba(223, 240, 199, 0.92) 100%),
+      url('최정.jpg');
+    background-size: cover;
+    background-position: center 20%;
   }
 
   .hero h1 {
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
     font-weight: 800;
     letter-spacing: -0.02em;
+    color: var(--text);
+    text-shadow: 0 2px 16px rgba(255, 255, 255, 0.6);
   }
 
   .hero p.tagline {
-    margin-top: 14px;
-    font-size: clamp(1rem, 2.5vw, 1.25rem);
-    color: var(--text-muted);
-    max-width: 520px;
+    margin-top: 12px;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    color: var(--text);
+    text-shadow: 0 2px 12px rgba(255, 255, 255, 0.6);
   }
 
   /* Section titles */
   section {
-    padding: 64px 0;
-  }
-
-  section + section {
-    border-top: 1px solid var(--border);
+    padding: 60px 0;
   }
 
   .section-title {
@@ -102,93 +87,30 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 12px;
+    gap: 14px;
   }
 
   .pill {
-    padding: 10px 20px;
+    padding: 12px 26px;
     border-radius: 999px;
-    background: var(--bg-soft);
+    background: var(--card);
     border: 1px solid var(--border);
-    font-size: 0.95rem;
-    font-weight: 500;
-    transition: transform 0.2s ease, border-color 0.2s ease;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+    box-shadow: 0 6px 16px rgba(123, 184, 148, 0.12);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
 
   .pill:hover {
     transform: translateY(-3px);
-    border-color: var(--accent);
-  }
-
-  /* Projects */
-  .project-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-  }
-
-  .project-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 28px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-  }
-
-  .project-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35);
-  }
-
-  .project-card h3 {
-    font-size: 1.25rem;
-    font-weight: 700;
-  }
-
-  .project-card p {
-    color: var(--text-muted);
-    flex-grow: 1;
-  }
-
-  .project-link {
-    align-self: flex-start;
-    margin-top: 8px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--accent);
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .project-link:hover {
-    text-decoration: underline;
-  }
-
-  /* Skills */
-  .skill-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-  }
-
-  .badge {
-    padding: 10px 18px;
-    border-radius: 10px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    background: linear-gradient(135deg, rgba(129, 140, 248, 0.15), rgba(244, 114, 182, 0.15));
-    border: 1px solid var(--border);
+    box-shadow: 0 10px 24px rgba(123, 184, 148, 0.2);
   }
 
   /* Contact */
   .contact {
     text-align: center;
+    padding-bottom: 80px;
   }
 
   .contact-links {
@@ -196,39 +118,41 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 16px;
-    margin-top: 20px;
+    margin-top: 8px;
   }
 
   .contact-link {
     padding: 14px 28px;
     border-radius: 12px;
-    background: var(--bg-soft);
+    background: var(--card);
     border: 1px solid var(--border);
     color: var(--text);
     text-decoration: none;
     font-weight: 600;
     font-size: 0.95rem;
-    transition: transform 0.2s ease, border-color 0.2s ease;
+    box-shadow: 0 6px 16px rgba(123, 184, 148, 0.12);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
 
   .contact-link:hover {
     transform: translateY(-3px);
-    border-color: var(--accent);
+    box-shadow: 0 10px 24px rgba(123, 184, 148, 0.2);
   }
 
   footer {
     text-align: center;
-    padding: 32px 24px;
+    padding: 28px 24px 40px;
     color: var(--text-muted);
     font-size: 0.85rem;
   }
 
   @media (max-width: 640px) {
-    .project-grid {
-      grid-template-columns: 1fr;
+    .hero {
+      min-height: 60vh;
+      background-position: center 15%;
     }
     section {
-      padding: 48px 0;
+      padding: 44px 0;
     }
   }
 </style>
@@ -236,48 +160,17 @@
 <body>
 
   <header class="hero">
-    <div class="avatar">서</div>
     <h1>서승아</h1>
-    <p class="tagline">안녕하세요 잘부탁드립니다</p>
+    <p class="tagline">안녕하세요</p>
   </header>
 
   <section id="interests">
     <div class="container">
       <p class="section-title">Interests</p>
       <div class="pill-row">
-        <span class="pill">롤</span>
         <span class="pill">야구</span>
         <span class="pill">베이킹</span>
-        <span class="pill">베이스 기타</span>
-      </div>
-    </div>
-  </section>
-
-  <section id="projects">
-    <div class="container">
-      <p class="section-title">Projects</p>
-      <div class="project-grid">
-        <div class="project-card">
-          <h3>롤</h3>
-          <p>닉네임 '니모티코' 서포터입니다.</p>
-          <a class="project-link" href="#">링크 추후 추가 →</a>
-        </div>
-        <div class="project-card">
-          <h3>야구</h3>
-          <p>SSG랜더스 팬입니다.</p>
-          <a class="project-link" href="#">링크 추후 추가 →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="skills">
-    <div class="container">
-      <p class="section-title">Skills</p>
-      <div class="skill-row">
-        <span class="badge">요리 잘함</span>
-        <span class="badge">베이스 기타 - 축제 중앙무대 공연</span>
-        <span class="badge">재주꾼 선발대회 출전</span>
+        <span class="pill">베이스</span>
       </div>
     </div>
   </section>
